@@ -11,7 +11,7 @@
 import Sidebar from "@/components/SidebarMenu.vue";
 </script>
 
-<style composed>
+<style scoped>
 .container {
   display: flex;
 }
