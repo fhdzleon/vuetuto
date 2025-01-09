@@ -5,6 +5,7 @@
       <div class="input">
         <label for="name">Nombre</label>
         <Field
+          v-model="name"
           type="text"
           placeholder="Ingrese su nombre"
           name="name"
@@ -15,6 +16,7 @@
       <div class="input">
         <label for="email">E-mail</label>
         <Field
+          v-model="email"
           type="email"
           placeholder="Ingrese su email"
           name="email"
@@ -30,8 +32,15 @@
 <script setup>
 import { Form, Field, ErrorMessage } from "vee-validate";
 import { schema } from "../schemas/validationSchema";
+import { useRegisterStore } from "../stores/registerStore";
+import { ref } from "vue";
+
+const registerStore = useRegisterStore();
+const name = ref("");
+const email = ref("");
 
 const onSubmit = (values, { resetForm }) => {
+  registerStore.saveRegister(name.value, email.value);
   alert("Regitro enviado");
   resetForm();
 };

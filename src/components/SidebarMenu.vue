@@ -1,6 +1,9 @@
 <template>
   <div class="sidebar">
-    <h2>Barra lateral</h2>
+    <h2>Bienvenido</h2>
+    <h3>{{ registerStore.name }}</h3>
+    <h3>{{ registerStore.email }}</h3>
+    <h3></h3>
     <ul>
       <li>
         <router-link to="/contador">Contador</router-link>
@@ -15,8 +18,11 @@
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+import { useRegisterStore } from "@/modules/registro/stores/registerStore";
 
+const registerStore = useRegisterStore();
+</script>
 <style scoped>
 .sidebar {
   width: 200px;

@@ -1,4 +1,5 @@
 <template>
+  <HeaderView />
   <div class="container">
     <Sidebar />
     <div class="content">
@@ -9,6 +10,7 @@
 
 <script setup>
 import Sidebar from "@/components/SidebarMenu.vue";
+import HeaderView from "@/components/HeaderView.vue";
 </script>
 
 <style scoped>
